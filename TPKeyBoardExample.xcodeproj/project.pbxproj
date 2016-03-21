@@ -14,6 +14,7 @@
 		E9FD5EE81B46295C0051E559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FD5EE61B46295C0051E559 /* LaunchScreen.storyboard */; };
 		E9FD5EF31B46295C0051E559 /* TPKeyBoardExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD5EF21B46295C0051E559 /* TPKeyBoardExampleTests.swift */; };
 		E9FD5EFE1B46295C0051E559 /* TPKeyBoardExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD5EFD1B46295C0051E559 /* TPKeyBoardExampleUITests.swift */; };
+		E9FD5F0C1B462A120051E559 /* TPKeyBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD5F0B1B462A120051E559 /* TPKeyBoardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E9FD5EF91B46295C0051E559 /* TPKeyBoardExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPKeyBoardExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD5EFD1B46295C0051E559 /* TPKeyBoardExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPKeyBoardExampleUITests.swift; sourceTree = "<group>"; };
 		E9FD5EFF1B46295C0051E559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9FD5F0B1B462A120051E559 /* TPKeyBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPKeyBoardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E9FD5EE41B46295C0051E559 /* Assets.xcassets */,
 				E9FD5EE61B46295C0051E559 /* LaunchScreen.storyboard */,
 				E9FD5EE91B46295C0051E559 /* Info.plist */,
+				E9FD5F0B1B462A120051E559 /* TPKeyBoardExtension.swift */,
 			);
 			path = TPKeyBoardExample;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9FD5EE01B46295C0051E559 /* ViewController.swift in Sources */,
+				E9FD5F0C1B462A120051E559 /* TPKeyBoardExtension.swift in Sources */,
 				E9FD5EDE1B46295C0051E559 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TPKeyBoardExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.defide-ix.TPKeyBoardExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TPKeyBoardExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.defide-ix.TPKeyBoardExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -481,6 +487,7 @@
 				E9FD5F041B46295C0051E559 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9FD5F051B46295C0051E559 /* Build configuration list for PBXNativeTarget "TPKeyBoardExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +496,7 @@
 				E9FD5F071B46295C0051E559 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9FD5F081B46295C0051E559 /* Build configuration list for PBXNativeTarget "TPKeyBoardExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +505,7 @@
 				E9FD5F0A1B46295C0051E559 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
