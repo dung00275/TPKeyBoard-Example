@@ -88,7 +88,7 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
     override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         if newSuperview != nil {
-            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
@@ -107,35 +107,35 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), userInfo: nil, repeats: false)
     }
 }
 
-internal extension TPKeyboardAvoidingTableView
+private extension TPKeyboardAvoidingTableView
 {
     func setup()
     {
         if self.hasAutomaticKeyboardAvoidingBehaviour() { return }
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillShow:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillShow(_:)),
             name: UIKeyboardWillChangeFrameNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillHide:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillHide(_:)),
             name: UIKeyboardWillHideNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextViewTextDidBeginEditingNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextFieldTextDidBeginEditingNotification,
             object: nil)
     }
@@ -208,7 +208,7 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
     override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         if newSuperview != nil {
-            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
@@ -227,33 +227,33 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), userInfo: nil, repeats: false)
     }
 }
 
-internal extension TPKeyboardAvoidingCollectionView
+private extension TPKeyboardAvoidingCollectionView
 {
     func setup()
     {
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillShow:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillShow(_:)),
             name: UIKeyboardWillChangeFrameNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillHide:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillHide(_:)),
             name: UIKeyboardWillHideNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextViewTextDidBeginEditingNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextFieldTextDidBeginEditingNotification,
             object: nil)
     }
@@ -311,7 +311,7 @@ class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDe
     override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         if newSuperview != nil {
-            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
@@ -330,33 +330,33 @@ class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDe
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", object: self)
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
 
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), userInfo: nil, repeats: false)
     }
 }
 
-internal extension TPKeyboardAvoidingScrollView
+private extension TPKeyboardAvoidingScrollView
 {
     func setup()
     {
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillShow:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillShow(_:)),
             name: UIKeyboardWillChangeFrameNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "TPKeyboardAvoiding_keyboardWillHide:",
+            selector: #selector(TPKeyboardAvoiding_keyboardWillHide(_:)),
             name: UIKeyboardWillHideNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextViewTextDidBeginEditingNotification,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "scrollToActiveTextField",
+            selector: #selector(scrollToActiveTextField),
             name: UITextFieldTextDidBeginEditingNotification,
             object: nil)
     }
@@ -490,7 +490,7 @@ extension UIScrollView
     {
         guard let firstResponder = self.TPKeyboardAvoiding_findFirstResponderBeneathView(self) else { return false}
         guard let view = self.TPKeyboardAvoiding_findNextInputViewAfterView(firstResponder, beneathView: self) else { return false}
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: view, selector: "becomeFirstResponder", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: view, selector: #selector(becomeFirstResponder), userInfo: nil, repeats: false)
         
         return true
        
@@ -518,7 +518,7 @@ extension UIScrollView
     {
         for childView in view.subviews
         {
-            if childView.respondsToSelector("isFirstResponder") && childView.isFirstResponder()
+            if childView.respondsToSelector(#selector(isFirstResponder)) && childView.isFirstResponder()
             {
                 return childView
             }
